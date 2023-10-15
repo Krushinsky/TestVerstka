@@ -1,0 +1,199 @@
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	visibility: hidden;
+	overflow: auto;
+
+	width: 100%;
+	height: 100%;
+
+	transition: all 0.5s ease;
+
+	opacity: 0;
+	background: rgb(0 0 0 / 50%);
+
+	&__container {
+		position: relative;
+
+		flex-shrink: 0;
+
+		width: 540px;
+		height: 800px;
+		margin-top: 2%;
+		margin-left:35%;
+
+		transition: all 0.5s ease;
+		transform: perspective(400px) translateY(100%) rotateX(-45deg);
+
+		border-radius: 10px;
+		background: #FFF;
+		box-shadow: 5px 10px 50px 0 rgb(16 112 177 / 20%);
+		
+	}
+
+	&__header {
+		margin-top: 56px;
+		margin-left: 32px;
+
+		letter-spacing: 0.8px;
+
+		color: var(--Blue_01, #1F3F68);
+
+		font-family: Gilroy-Regular;
+		font-size: 20px;
+		font-weight: 600;
+		font-style: normal;
+		line-height: 30px; /* 150% */
+	}
+
+	&__close {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+
+		font-size: 2em;
+	}
+
+	&__body {
+		padding: 1em;
+	}
+
+	&__buttonbar {
+		position:absolute;
+
+		margin: 72px 0 0;
+	}
+
+	&__content {
+		margin-top: 48px;
+		margin-left: 32px;
+		padding: 8px;
+
+		letter-spacing: 0.64px;
+
+		opacity: 0.8;
+		color: var(--Blue_01, #1F3F68);
+
+		font-family: Gilroy-Regular;
+		font-size: 16px;
+		font-weight: 400;
+		font-style: normal;
+		line-height: 30px; /* 187.5% */
+	}
+}
+
+.visible {
+	visibility: visible;
+
+	transition: all 0.5s ease;
+
+	opacity: 1;
+
+	.modal {
+		&__container {
+			transition: all 0.5s ease;
+			transform: translateY(0);
+		}
+	}
+}
+
+body.modal__visible {
+	overflow: hidden;
+}
+
+.content_for_modal {
+	visibility: hidden;
+}
+
+.input-field{
+	flex-shrink: 0;
+
+	width: 428px;
+	height: 72px;
+
+	opacity: 0.4;
+	border: 1px solid var(--blue_03, #356EAD);
+	border-radius: 10px;
+
+	font-size: 25px;
+
+}
+
+.input-field::placeholder{
+	width: 101.121px; 
+
+	letter-spacing: 0.64px;
+
+	color: var(--Blue_01, #1F3F68);
+
+	font-family: Gilroy;
+	font-size: 14px;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 30px;
+}
+
+.email, .message{
+	margin-top: 32px;
+}
+
+.input-message{
+	flex-shrink: 0;
+
+	width: 428px;
+	height: 144px;
+}
+
+.buttonbar__ok{
+	flex-shrink: 0;
+
+	width: 428px;
+	height: 72px;
+
+	cursor: pointer;
+	text-align: center; 
+	letter-spacing: 0.64px;
+
+	opacity: 0;
+	color: #FFF;
+	border-radius: 10px;
+	background: var(--blue_04, #5A98D0);
+	box-shadow: 5px 20px 50px 0 rgb(16 112 177 / 20%);
+
+	font-family: Gilroy-Regular;
+	font-size: 16px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 26px;
+}
+
+.error .input-field{
+	border-color: red;
+}
+
+.error-label{
+	display: block;
+
+	color: red;
+}
+
+.color{
+	opacity: 1;
+}
+
+@media all and (max-width: 800px){
+	.modal {
+		&__container {
+			width: 100%;
+			margin-top: 100%
+		}
+	}
+}
+
+
+@media all and (max-width: 500px){
+	
+	
+}	
